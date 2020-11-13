@@ -1,0 +1,36 @@
+<br />
+<div class="container">
+  <mat-progress-spinner *ngIf="isLoad" mode="indeterminate" diameter="100"></mat-progress-spinner>
+  <mat-card style="font-size: 18px; font-weight: 100;">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ullam ratione sapiente dicta omnis quas, nostrum
+      deleniti. Dolorum soluta incidunt explicabo aliquid, ipsam, autem maiores magnam repudiandae corrupti, tenetur
+      ducimus.</p>
+  </mat-card>
+</div>
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let x of y">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar style="background-image: url('{{url}}/assets/abrsh.jpg');
+          background-size: cover;"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets/abrsh.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <p><mat-icon>email</mat-icon>abrshaschalew@gmail.com</p>
+        <p><mat-icon>alternate_email</mat-icon>abrshdev</p>
+      </mat-card>
+      <br>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,104 @@
+<mat-tab-group mat-align-tabs="center" (selectedTabChange)="evetnListner($event)">
+  <mat-tab label="Trafic">
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+  </mat-tab>
+  <mat-tab label="Contact Message">
+    <br>
+    <div class="container scroll">
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel
+          *ngFor="let contact of contacts"
+          [expanded]="step === contact.index"
+          (opened)="setStep(contact.index)"
+          hideToggle
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ contact.name }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>Phone :  {{ contact.phone }}</p>
+          <p>E-mail :  {{ contact.email }}</p>
+          <p>Message :  {{ contact.content }}</p>
+          <mat-action-row>
+            <button
+              *ngIf="contact.index > 0"
+              mat-button
+              color="warn"
+              (click)="prevStep()"
+            >
+              Previous
+            </button>
+            <button
+              *ngIf="contacts.length - 1 != contact.index"
+              mat-button
+              color="primary"
+              (click)="nextStep()"
+            >
+              Next
+            </button>
+            <button
+              *ngIf="contacts.length - 1 == contact.index"
+              mat-button
+              color="primary"
+              (click)="nextStep()"
+            >
+              End
+            </button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </mat-tab>
+  <mat-tab label="Jobs">
+    <br>
+    <div class="container scroll">
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel
+          *ngFor="let job of jobs"
+          [expanded]="step2 === job.index"
+          (opened)="setStep2(job.index)"
+          hideToggle
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ job.name }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>Phone :  {{ job.phone }}</p>
+          <p>E-mail :  {{ job.email }}</p>
+          <mat-action-row>
+            <button
+              *ngIf="job.index > 0"
+              mat-button
+              color="warn"
+              (click)="prevStep2()"
+            >
+              Previous
+            </button>
+            <button
+              *ngIf="contacts.length - 1 != job.index"
+              mat-button
+              color="primary"
+              (click)="nextStep2()"
+            >
+              Next
+            </button>
+            <button
+              *ngIf="contacts.length - 1 == job.index"
+              mat-button
+              color="primary"
+              (click)="nextStep2()"
+            >
+              End
+            </button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Projects">
+
+  </mat-tab>
+</mat-tab-group>

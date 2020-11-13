@@ -1,0 +1,33 @@
+<div class="container" id="contact">
+  <br>
+  <h1>Contact US</h1>
+  <form class="my-form" (submit)="onContact(contactForm)" #contactForm="ngForm" *ngIf="!isLoad">
+    <mat-form-field class="full-width">
+      <mat-label>Your Name</mat-label>
+      <input matInput type="text" placeholder="Name" name="name" ngModel #name="ngModel" required />
+      <mat-error *ngIf="name.invalid">Please insert your name</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Your E-mail</mat-label>
+      <input matInput type="text" placeholder="E-mail" name="email" ngModel #email="ngModel" required />
+      <mat-error *ngIf="email.invalid">Please insert your email address</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Your Subject</mat-label>
+      <input matInput type="text" placeholder="Subject" name="subject" ngModel #subject="ngModel" required />
+      <mat-error *ngIf="subject.invalid">Please insert your subject</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Your Message</mat-label>
+      <textarea matInput type="text" placeholder="Message" name="message" ngModel #message="ngModel" required></textarea>
+      <mat-error *ngIf="message.invalid">Please insert your message</mat-error>
+    </mat-form-field>
+
+
+    <button type="submit" mat-raised-button>Submit</button>
+  </form>
+  <mat-progress-spinner *ngIf="isLoad" mode="indeterminate" diameter="100"></mat-progress-spinner>
+</div>

@@ -1,0 +1,28 @@
+<br><br>
+<div style="
+background-image: url('assets/banner.jpg');
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+  <div class="container m-0" style="height: 400px;">
+    <br><br>
+    <div *ngIf="isPc">
+      <br><br><br><br>
+    </div>
+    <div *ngIf="isPc" style="float: left;">
+      <a class="fab fa-twitter"></a>
+      <a class="fab fa-facebook-f"></a>
+      <a class="fab fa-instagram"></a>
+      <a class="fab fa-telegram"></a>
+      <a class="fab fa-github"></a>
+    </div>
+    <div>
+      <h1>Amy<sup>2</sup> Team</h1>
+      <h2>Self-learning software engineering through research & development.</h2>
+    </div>
+    <button type="button" class="btn btn-outline-dark btn-lg" (click)="scroll('price')" style="color: #ffffff">
+      Get Started
+    </button>
+  </div>
+</div>

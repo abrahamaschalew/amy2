@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-card-content>
+    <form class="my-form" (submit)="onOrder(signinForm)" #signinForm="ngForm" *ngIf="!isLoad">
+      <mat-form-field class="full-width">
+        <mat-label>Your Name</mat-label>
+        <input matInput type="text" placeholder="Name" name="name" ngModel #name="ngModel" required />
+        <mat-error *ngIf="name.invalid">Please insert your name</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Your Phone</mat-label>
+        <input matInput type="text" placeholder="Phone" name="phone" ngModel #phone="ngModel" required />
+        <mat-error *ngIf="phone.invalid">Please insert your phone</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Your E-mail</mat-label>
+        <input matInput type="text" placeholder="Phone" name="email" ngModel #email="ngModel" required />
+        <mat-error *ngIf="email.invalid">Please insert your email</mat-error>
+      </mat-form-field>
+      <mat-error></mat-error>
+      <mat-card-actions>
+        <button id="boldButton" type="submit" mat-raised-button color="primary">Order</button>
+      </mat-card-actions>
+    </form>
+    <mat-progress-spinner *ngIf="isLoad" mode="indeterminate" diameter="100"></mat-progress-spinner>
+  </mat-card-content>
+</div>

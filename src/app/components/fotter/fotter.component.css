@@ -1,0 +1,21 @@
+.body {
+  color: #ffffff;
+  background-color: #222222;
+  -ms-hyphenate-limit-chars: 100%;
+}
+
+.center-dark {
+  background-color: #383838;
+}
+
+.fab {
+  font-size: 25px;
+  padding: 15px;
+  width: 100%;
+}
+
+li {
+  padding: 10px;
+}
+
+
